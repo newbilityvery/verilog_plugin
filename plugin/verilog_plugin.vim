@@ -16,16 +16,16 @@ command Acontent :call  AddContent()
 "===============================================================
 function AddHeader()
   call append(0,  "//================================================================================")
-  call append(1,  "// Created by         : KTT Ltd.com")
+  call append(1,  "// Created by         : Weiwei")
   call append(2,  "// Filename           : ".expand("%"))
-  call append(3,  "// Author             : Python_Wang")
+  call append(3,  "// Author             : Weiwei Zhong")
   call append(4,  "// Created On         : ".strftime("%Y-%m-%d %H:%M"))
-  call append(5,  "// Last Modified      :  ")
-  call append(6,  "// Update Count       : ".strftime("%Y-%m-%d %H:%M"))
-  call append(7,  "// Description        : ")
+  call append(5,  "// Last Modified      : ")
+  " call append(6,  "// Update Count       : ".strftime("%Y-%m-%d %H:%M"))
+  call append(6,  "// Description        : ")
+  call append(7,  "//                      ")
   call append(8,  "//                      ")
-  call append(9,  "//                      ")
-  call append(10, "//================================================================================")
+  call append(9, "//================================================================================")
 endfunction
 "===============================================================
 "
@@ -106,7 +106,7 @@ function AddAlways(clk_edge, rst_edge)
    endif
 endfunction
 
-"autocmd BufWritePre,FileWritePre *.v   ks|call LastModified()|'s
+autocmd BufWritePre,FileWritePre *.v   ks|call LastModified()|'s
 fun LastModified()
     let l = line("$")
     exe "1," . l . "g/Last Modified      :/s/Last Modified      :.*/Last Modified      : " .
