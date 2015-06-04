@@ -14,7 +14,7 @@ command Acontent :call  AddContent()
 "===============================================================
 "        Add File Header
 "===============================================================
-function AddHeader()
+function! AddHeader()
   call append(0,  "//================================================================================")
   call append(1,  "// Created by         : Weiwei")
   call append(2,  "// Filename           : ".expand("%"))
@@ -30,7 +30,7 @@ endfunction
 "===============================================================
 "
 "===============================================================
-function AddContent()
+function! AddContent()
   let curr_line = line(".")
   call append(curr_line,   "//================================================================================")
   call append(curr_line+1, "//Function  : ")
@@ -42,7 +42,7 @@ endfunction
 "===============================================================
 "        Add an always statement
 "===============================================================
-function AddAlways(clk_edge, rst_edge)
+function! AddAlways(clk_edge, rst_edge)
    for line in getline(1, line("$"))
       if line =~ '^\s*\<input\>.*//\s*\<clock\>\s*$'
          let line = substitute(line, '^\s*\<input\>\s*', "", "")
@@ -107,7 +107,7 @@ function AddAlways(clk_edge, rst_edge)
 endfunction
 
 autocmd BufWritePre,FileWritePre *.v   ks|call LastModified()|'s
-fun LastModified()
+function! LastModified()
     let l = line("$")
     exe "1," . l . "g/Last Modified      :/s/Last Modified      :.*/Last Modified      : " .
         \ strftime("%Y-%m-%d %H:%M")
