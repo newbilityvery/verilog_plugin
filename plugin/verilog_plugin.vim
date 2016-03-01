@@ -5,10 +5,10 @@ let b:vlog_plugin = 1
 
 iabbrev <= <= #1
 
-command Aheader :call  AddHeader()
-command Allpn :call AddAlways("posedge", "negedge")
-command Allcom :call AddAlways("", "")
-command Acontent :call  AddContent()
+command! Aheader :call  AddHeader()
+command! Allpn :call AddAlways("posedge", "negedge")
+command! Allcom :call AddAlways("", "")
+command! Acontent :call  AddContent()
 
 
 "===============================================================
