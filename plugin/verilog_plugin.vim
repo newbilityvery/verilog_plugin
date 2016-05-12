@@ -5,10 +5,11 @@ let b:vlog_plugin = 1
 
 iabbrev <= <= #1
 
-command Aheader :call  AddHeader()
-command Allpn :call AddAlways("posedge", "negedge")
-command Allcom :call AddAlways("", "")
-command Acontent :call  AddContent()
+command! Aheader :call  AddHeader()
+command! Allpn :call AddAlways("posedge", "negedge")
+command! Allcom :call AddAlways("", "")
+command! Acontent :call  AddContent()
+command! Avlogauto :call  AddVlogAuto()
 
 
 "===============================================================
@@ -23,9 +24,8 @@ function! AddHeader()
   call append(5,  "// Last Modified      : ")
   " call append(6,  "// Update Count       : ".strftime("%Y-%m-%d %H:%M"))
   call append(6,  "// Description        : ")
-  call append(7,  "//                      ")
-  call append(8,  "//                      ")
-  call append(9, "//================================================================================")
+  call append(7,  "// ")
+  call append(8, "//================================================================================")
 endfunction
 "===============================================================
 "
@@ -106,7 +106,21 @@ function! AddAlways(clk_edge, rst_edge)
    endif
 endfunction
 
-autocmd BufWritePre,FileWritePre *.v   ks|call LastModified()|'s
+"===============================================================
+"        Add verilog-mode auto cfg
+"===============================================================
+function! AddVlogAuto()
+  call append(line('$'),  "///////////////////////////////////////////////////////////////////////////                      ")
+  call append(line('$'),  "// Local Variables:                                                                              ")
+  call append(line('$'),  "// verilog-library-flags:\(\"-y ./ \"\)")
+  call append(line('$'),  "// verilog-auto-inst-param-value:t")
+  call append(line('$'),  "// End:                                                                                          ")
+  call append(line('$'),  "///////////////////////////////////////////////////////////////////////////                      ")
+endfunction
+
+"===============================================================
+
+autocmd BufWritePre,FileWritePre *.v,*.sv,*.vh,*.svh   ks|call LastModified()|'s
 function! LastModified()
     let l = line("$")
     exe "1," . l . "g/Last Modified      :/s/Last Modified      :.*/Last Modified      : " .
