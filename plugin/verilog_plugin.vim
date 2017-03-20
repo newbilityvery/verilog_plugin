@@ -3,7 +3,7 @@ if exists("b:vlog_plugin")
 endif
 let b:vlog_plugin = 1
 
-iabbrev <= <= #1
+" iabbrev <= <= #1
 
 command! Aheader :call  AddHeader()
 command! Allpn :call AddAlways("posedge", "negedge")
@@ -20,12 +20,13 @@ function! AddHeader()
   call append(1,  "// Created by         : Weiwei")
   call append(2,  "// Filename           : ".expand("%"))
   call append(3,  "// Author             : Weiwei Zhong")
-  call append(4,  "// Created On         : ".strftime("%Y-%m-%d %H:%M"))
-  call append(5,  "// Last Modified      : ")
+  call append(4,  "// Author(Original)   : Weiwei Zhong")
+  call append(5,  "// Created On         : ".strftime("%Y-%m-%d %H:%M"))
+  call append(6,  "// Last Modified      : ")
   " call append(6,  "// Update Count       : ".strftime("%Y-%m-%d %H:%M"))
-  call append(6,  "// Description        : ")
-  call append(7,  "// ")
-  call append(8, "//================================================================================")
+  call append(7,  "// Description        : ")
+  call append(8,  "// ")
+  call append(9, "//================================================================================")
 endfunction
 "===============================================================
 "
@@ -110,12 +111,12 @@ endfunction
 "        Add verilog-mode auto cfg
 "===============================================================
 function! AddVlogAuto()
-  call append(line('$'),  "///////////////////////////////////////////////////////////////////////////                      ")
-  call append(line('$'),  "// Local Variables:                                                                              ")
+  call append(line('$'),  "///////////////////////////////////////////////////////////////////////////")
+  call append(line('$'),  "// Local Variables:")
   call append(line('$'),  "// verilog-library-flags:\(\"-y ./ \"\)")
   call append(line('$'),  "// verilog-auto-inst-param-value:t")
-  call append(line('$'),  "// End:                                                                                          ")
-  call append(line('$'),  "///////////////////////////////////////////////////////////////////////////                      ")
+  call append(line('$'),  "// End:")
+  call append(line('$'),  "///////////////////////////////////////////////////////////////////////////")
 endfunction
 
 "===============================================================
