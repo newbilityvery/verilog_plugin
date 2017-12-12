@@ -121,7 +121,7 @@ endfunction
 
 "===============================================================
 
-autocmd BufWritePre,FileWritePre *.v,*.sv,*.vh,*.svh   ks|call LastModified()|'s
+autocmd BufWritePre,FileWritePre *.v,*.sv,*.vh,*.svh   ks|silent call LastModified()|'s
 function! LastModified()
     let l = line("$")
     exe "1," . l . "g/Last Modified      :/s/Last Modified      :.*/Last Modified      : " .
