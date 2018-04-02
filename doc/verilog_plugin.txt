@@ -1,0 +1,75 @@
+*verilog_plugin.txt*    Notes for verilog coding
+
+Author:         Weiwei
+Licence:        
+Homepage:       
+Version:        0.1
+
+==============================================================================
+Contents                                            *verilog_plugin*
+
+  1. Intro ........................... |verilog_plugin-intro|
+  2. Cheatsheet ...................... |verilog_plugin-cheatsheet|
+    2.1. Auto-mode...................  |verilog_plugin-cheatautomode|
+
+==============================================================================
+1. Intro                                           *verilog_plugin-intro*
+
+Verilog plugin for myself.
+
+
+==============================================================================
+2. Cheatsheet                                      *verilog_plugin-cheatsheet*
+
+------------------------------------------------------------------------------
+2.1. Auto mode                                  *verilog_plugin-cheatautomode*
+
+2.1.1. Local Variables
+
+>
+  ///////////////////////////////////////////////////////////////////////////
+  // Local Variables:
+  // verilog-library-flags:\(\"-y ./ \"\)
+  // verilog-auto-inst-param-value:t
+  // verilog-auto-star-save: f
+  // eval:(verilog-read-defines)
+  // eval:(verilog-read-includes)
+  // End:
+  ///////////////////////////////////////////////////////////////////////////
+<
+
+------------------------------------------------------------------------------
+2.1.2 Ignore in auto-output                    *verilog_plugin-cheatignoreout*
+
+* Method 1: Using auto_lisp. (limit 3000 characters)
+>
+  /*AUTO_LISP(setq verilog-auto-output-ignore-regexp
+              (verilog-regexp-words `(
+                "q_single_reg_rddata_30" 
+          )))*/
+<
+
+* Method 2: using Local variables
+>
+  /*
+     Local Variables:
+     verilog-auto-output-ignore-regexp: "" 
+     eval:(setq verilog-auto-output-ignore-regexp (concat
+     "^\\(" 
+     "signal1_.*" 
+     "\\|signal2_.*" 
+     "\\)$" 
+     )))
+     End:
+  */
+<
+
+* Method 3: Define in a NEVER defined keyword
+>
+  `ifdef NEVER
+          output a_out;   // Fake out Verilog-mode
+          output b_out;   // Fake out Verilog-mode
+  `endif
+<
+
+2.2. TBD
