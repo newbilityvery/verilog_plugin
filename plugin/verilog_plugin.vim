@@ -128,7 +128,7 @@ let b:vlog_plugin = 1
 augroup last_modified_date
   " autocmd BufWritePre,FileWritePre *.v,*.sv,*.vh,*.svh   ks|silent call LastModified()|'s
   " Only search the first 15 lines
-  autocmd BufWritePre,FileWritePre *   ks|silent call LastModified(1, 15)|'s
+  autocmd BufWritePre,FileWritePre *   ks|silent! call LastModified(1, 15)|'s
 augroup END
 
 function! LastModified(start_line, end_line)
