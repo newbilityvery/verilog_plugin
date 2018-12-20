@@ -22,7 +22,7 @@ Verilog plugin for myself.
 2. Cheatsheet                                      *verilog_plugin-cheatsheet*
 
 ------------------------------------------------------------------------------
-2.1. Auto mode                                  *verilog_plugin-cheatautomode*
+2.1. Auto mode                                  *verilog_plugin-cheat-automode*
 
 2.1.1. Local Variables
 
@@ -39,7 +39,7 @@ Verilog plugin for myself.
 <
 
 ------------------------------------------------------------------------------
-2.1.2 Ignore in auto-output                    *verilog_plugin-cheatignoreout*
+2.1.2 Ignore in auto-output                    *verilog_plugin-cheat-ignoreout*
 
 * Method 1: Using auto_lisp. (limit 3000 characters)
 >
@@ -72,4 +72,42 @@ Verilog plugin for myself.
   `endif
 <
 
-2.2. TBD
+------------------------------------------------------------------------------
+2.1.3 special variables                            *verilog_plugin-special-var*
+
+There are special variables defined that are useful in these Lisp functions:
+>
+	vl-name        Name portion of the input/output port.
+	vl-bits        Bus bits portion of the input/output port (`[2:0]').
+	vl-mbits       Multidimensional array bits for port (`[2:0][3:0]').
+	vl-width       Width of the input/output port (`3' for [2:0]).
+                       May be a (...) expression if bits isn't a constant.
+	vl-dir         Direction of the pin input/output/inout/interface.
+	vl-modport     The modport, if an interface with a modport.
+	vl-cell-type   Module name/type of the cell (`InstModule').
+	vl-cell-name   Instance name of the cell (`instName').
+<
+
+Examples:
+
+1. Use substring and vl-cell-name for port names.
+>
+  /* InstModule AUTO_TEMPLATE (
+       .a(@"(substring vl-cell-name 2)"_in[]),
+       .b(@"(substring vl-cell-name 2)"_out[])
+       );*/
+
+  InstModule u_a0 (/*AUTOINST*/
+     // Inouts
+     .a    (a0_in[bitsa:0]),     // Templated
+     .b    (a0_out[bitsb:0]));     // Templated
+<
+
+2. Add `_i` and `_o` for in/out ports.
+>
+  /*test_mod auto_template(
+      .\(.*\) (@"(if (equal vl-dir \\"output\\")  \\"\1_o[]\\" \\"\1_i[]\\" )"),
+  );*/
+  test_mod u_test_mod(/*autoinst*/);
+<
+

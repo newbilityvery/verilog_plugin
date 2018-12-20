@@ -1,6 +1,13 @@
 verilog_plugin	verilog_plugin.txt	/*verilog_plugin*
-verilog_plugin-cheatautomode	verilog_plugin.txt	/*verilog_plugin-cheatautomode*
-verilog_plugin-cheatignoreout	verilog_plugin.txt	/*verilog_plugin-cheatignoreout*
+verilog_plugin-cheat-automode	verilog_plugin.txt	/*verilog_plugin-cheat-automode*
+verilog_plugin-cheat-ignoreout	verilog_plugin.txt	/*verilog_plugin-cheat-ignoreout*
 verilog_plugin-cheatsheet	verilog_plugin.txt	/*verilog_plugin-cheatsheet*
 verilog_plugin-intro	verilog_plugin.txt	/*verilog_plugin-intro*
+verilog_plugin-special-var	verilog_plugin.txt	/*verilog_plugin-special-var*
 verilog_plugin.txt	verilog_plugin.txt	/*verilog_plugin.txt*
+vivid_cheatsheet	vivid_cheatsheet.txt	/*vivid_cheatsheet*
+vivid_cheatsheet-content	vivid_cheatsheet.txt	/*vivid_cheatsheet-content*
+vivid_cheatsheet-intro	vivid_cheatsheet.txt	/*vivid_cheatsheet-intro*
+vivid_cheatsheet-snippets	vivid_cheatsheet.txt	/*vivid_cheatsheet-snippets*
+vivid_cheatsheet-vlog_snippets	vivid_cheatsheet.txt	/*vivid_cheatsheet-vlog_snippets*
+vivid_cheatsheet.txt	vivid_cheatsheet.txt	/*vivid_cheatsheet.txt*

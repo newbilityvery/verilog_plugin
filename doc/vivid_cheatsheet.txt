@@ -1,0 +1,38 @@
+*vivid_cheatsheet.txt*    Notes for Myself
+
+Author:         Weiwei
+Licence:        
+Homepage:       
+Version:        0.1
+
+==============================================================================
+Contents                                            *vivid_cheatsheet*
+
+  1. Intro ........................... |vivid_cheatsheet-intro|
+  2. Cheatsheet ...................... |vivid_cheatsheet-content|
+
+==============================================================================
+1. Intro                                           *vivid_cheatsheet-intro*
+
+Quick cheatsheet for myself.
+
+
+==============================================================================
+2. Cheatsheet                                      *vivid_cheatsheet-content*
+
+
+
+
+==============================================================================
+3. Snippets                                      *vivid_cheatsheet-snippets*
+
+verilog snippets                                 *vivid_cheatsheet-vlog_snippets*
+
+- alwc
+- alwfc
+- tbinit
+- tbmod
+- valv
+- vaig
+
+

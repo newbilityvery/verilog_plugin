@@ -1,3 +1,7 @@
+# verilog auto template
+snippet vatmp
+	/*${1} auto_template(
+	);*/
 # Always block with clock
 snippet alwc
 	always @(posedge ${1:clk}, negedge ${2:rst_n}) begin
@@ -8,6 +12,31 @@ snippet alwfc
 	always_ff @(posedge ${1:clk}, negedge ${2:rst_n}) begin
 		if(!${3:$2})
 	end
+# tb init
+snippet tbinit
+		localparam CLK_PER_H = 5; // 1/2 period
+
+		initial begin
+			clk = 1'b0; #1;
+			forever clk = #CLK_PER_H ~clk;
+		end
+
+		initial begin
+			rst_n = 1'b1; #1;
+			rst_n = 1'b0; #${2:33};
+			rst_n = 1'b1;
+		end
+# testbench module
+snippet mod1
+	module ${1:`expand('%:r')`}(
+		/*autoinput*/
+
+		/*autooutput*/
+	);
+
+		/*autologic*/
+
+	endmodule
 # testbench module
 snippet tbmod
 	module tb_${1:test_dut};
@@ -44,8 +73,8 @@ snippet valv
 # verilog auto ingore regex
 snippet vaig
 	/*AUTO_LISP(setq verilog-auto-output-ignore-regexp
-			(verilog-regexp-words `(
-				${1:"ignore_signal"}
+			(verilog-regexp-words \`(
+				"${1:ignore_signal}"
 			)))
 	*/
 
