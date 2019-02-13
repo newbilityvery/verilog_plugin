@@ -4,13 +4,13 @@ snippet vatmp
 	);*/
 # Always block with clock
 snippet alwc
-	always @(posedge ${1:clk}, negedge ${2:rst_n}) begin
-		if(!${3:$2})
+	always @(posedge ${2:clk}, negedge ${1:rst_n}) begin
+		if(!${3:$1})
 	end
 # Always_ff block with clock
 snippet alwfc
-	always_ff @(posedge ${1:clk}, negedge ${2:rst_n}) begin
-		if(!${3:$2})
+	always_ff @(posedge ${2:clk}, negedge ${1:rst_n}) begin
+		if(!${3:$1})
 	end
 # tb init
 snippet tbinit
