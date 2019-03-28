@@ -17,6 +17,7 @@ function! Vivid_search_root()
 
   if !empty(g:vivid_root_markers)
     let root_found = 0
+    let l:limit = 50
     let l:cur_dir = fnamemodify(l:root, ":p:h")
     let l:prev_dir = ""
 
@@ -36,6 +37,12 @@ function! Vivid_search_root()
       " Otherwise, go to upper level
       let l:prev_dir = l:cur_dir
       let l:cur_dir = fnamemodify(l:cur_dir, ":p:h:h")
+
+      " Timeout
+      let l:limit = l:limit - 1
+      if l:limit == 0
+        break
+      endif
 
     endwhile
 
