@@ -10,29 +10,75 @@ Contents                                            *vivid_cheatsheet*
 
   1. Intro ........................... |vivid_cheatsheet-intro|
   2. Cheatsheet ...................... |vivid_cheatsheet-content|
+  3. User Configure Variables          |vivid_cheatsheet-cfg_var|
 
 ==============================================================================
-1. Intro                                           *vivid_cheatsheet-intro*
+Intro                                           *vivid_cheatsheet-intro*
 
 Quick cheatsheet for myself.
 
 
 ==============================================================================
-2. Cheatsheet                                      *vivid_cheatsheet-content*
-
-
+Cheatsheet                                      *vivid_cheatsheet-cheatsheet*
 
 
 ==============================================================================
-3. Snippets                                      *vivid_cheatsheet-snippets*
+User Configure Variables                        *vivid_cheatsheet-cfg_var*
 
-verilog snippets                                 *vivid_cheatsheet-vlog_snippets*
+                                                *'g:vivid_lightline_patched_font'* 
+g:vivid_lightline_patched_font
+                                  1 - Use patched font
+                                  0 - (Default) Don't use patched font
 
-- alwc
-- alwfc
-- tbinit
-- tbmod
-- valv
-- vaig
+                                                               *'g:vivid_guifont'* 
+g:vivid_guifont
+                                  GUI font
+                                    * windows: `set guifont=Consolas:h11:cANSI`
+                                    * linux:   `set guifont=DejaVu\ Sans\ Mono\ 11`
+                                    * mac os:  `set guifont=Monaco:h11`
 
+                                                *'g:vivid_completor_plugin'*
+g:vivid_completor_plugin
+                                  Select completor plugin
+                                    * 'coc'
+                                    * 'mucomplete'
+
+g:vivid_ctrlp_ext_matcher 
+
+g:vivid_ext_matcher_path         
+                                  e.g. :"/home/wzhong/mylocal/bin/matcher"
+
+g:vivid_snip_plugin 
+                                  * snipmate
+                                  * ultisnips
+
+g:vivid_ctrlp_plugin              
+                                  * ctrlp
+                                  * leaderf
+
+                                                   *'g:vivid_root_markers'*
+g:vivid_root_markers
+                                  default: ['.design_top', '.prj_top', '.project']
+
+Applicable for vim8.0+~
+
+1 - Enable 
+0 or Not set - Disable 
+                                              *'g:vivid_gutentags_plugin'*
+                                              *'g:vivid_ale_plugin'*
+                                              *'g:vivid_which_key_plugin'*
+                                              *'g:vivid_vimwiki_plugin'*
+
+
+==============================================================================
+4. Snippets                                      *vivid_cheatsheet-snippets*
+
+                                                *vivid_cheatsheet-vlog_snippets*
+verilog snippets~
+- `alwc`
+- `alwfc`
+- `tbinit`
+- `tbmod`
+- `valv`
+- `vaig`
 

@@ -1,3 +1,10 @@
+'g:vivid_ale_plugin'	vivid_cheatsheet.txt	/*'g:vivid_ale_plugin'*
+'g:vivid_completor_plugin'	vivid_cheatsheet.txt	/*'g:vivid_completor_plugin'*
+'g:vivid_guifont'	vivid_cheatsheet.txt	/*'g:vivid_guifont'*
+'g:vivid_gutentags_plugin'	vivid_cheatsheet.txt	/*'g:vivid_gutentags_plugin'*
+'g:vivid_lightline_patched_font'	vivid_cheatsheet.txt	/*'g:vivid_lightline_patched_font'*
+'g:vivid_vimwiki_plugin'	vivid_cheatsheet.txt	/*'g:vivid_vimwiki_plugin'*
+'g:vivid_which_key_plugin'	vivid_cheatsheet.txt	/*'g:vivid_which_key_plugin'*
 verilog_plugin	verilog_plugin.txt	/*verilog_plugin*
 verilog_plugin-cheat-automode	verilog_plugin.txt	/*verilog_plugin-cheat-automode*
 verilog_plugin-cheat-ignoreout	verilog_plugin.txt	/*verilog_plugin-cheat-ignoreout*
@@ -6,7 +13,8 @@ verilog_plugin-intro	verilog_plugin.txt	/*verilog_plugin-intro*
 verilog_plugin-special-var	verilog_plugin.txt	/*verilog_plugin-special-var*
 verilog_plugin.txt	verilog_plugin.txt	/*verilog_plugin.txt*
 vivid_cheatsheet	vivid_cheatsheet.txt	/*vivid_cheatsheet*
-vivid_cheatsheet-content	vivid_cheatsheet.txt	/*vivid_cheatsheet-content*
+vivid_cheatsheet-cfg_var	vivid_cheatsheet.txt	/*vivid_cheatsheet-cfg_var*
+vivid_cheatsheet-cheatsheet	vivid_cheatsheet.txt	/*vivid_cheatsheet-cheatsheet*
 vivid_cheatsheet-intro	vivid_cheatsheet.txt	/*vivid_cheatsheet-intro*
 vivid_cheatsheet-snippets	vivid_cheatsheet.txt	/*vivid_cheatsheet-snippets*
 vivid_cheatsheet-vlog_snippets	vivid_cheatsheet.txt	/*vivid_cheatsheet-vlog_snippets*
