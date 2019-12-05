@@ -3,6 +3,7 @@
 'g:vivid_guifont'	vivid_cheatsheet.txt	/*'g:vivid_guifont'*
 'g:vivid_gutentags_plugin'	vivid_cheatsheet.txt	/*'g:vivid_gutentags_plugin'*
 'g:vivid_lightline_patched_font'	vivid_cheatsheet.txt	/*'g:vivid_lightline_patched_font'*
+'g:vivid_root_markers'	vivid_cheatsheet.txt	/*'g:vivid_root_markers'*
 'g:vivid_vimwiki_plugin'	vivid_cheatsheet.txt	/*'g:vivid_vimwiki_plugin'*
 'g:vivid_which_key_plugin'	vivid_cheatsheet.txt	/*'g:vivid_which_key_plugin'*
 verilog_plugin	verilog_plugin.txt	/*verilog_plugin*

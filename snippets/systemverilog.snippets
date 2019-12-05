@@ -1,7 +1,9 @@
 # verilog auto template
 snippet vatmp
-	/*${1} auto_template(
-	);*/
+	/* ${1:module_name} auto_template(
+	); */
+	${2:$1}
+		u_${3:$1}(/*autoinst*/);
 # Always block with clock
 snippet alwc
 	always @(posedge ${2:clk}, negedge ${1:rst_n}) begin
@@ -68,13 +70,15 @@ snippet valv
 	// Local Variables:
 	// verilog-library-flags:("-y ${1:..}")
 	// verilog-auto-inst-param-value:t
+	// verilog-auto-tieoff-declaration:"assign"
+	// eval:(verilog-read-defines)
 	// End:
 	///////////////////////////////////////////////////////////////////////////
 # verilog auto ingore regex
 snippet vaig
-	/*AUTO_LISP(setq verilog-auto-output-ignore-regexp
-			(verilog-regexp-words \`(
-				"${1:ignore_signal}"
+	/*AUTO_LISP(setq verilog-auto-${1:output}-ignore-regexp
+			(verilog-regexp-words `(
+				"${2:ignore_signal}"
 			)))
 	*/
 
